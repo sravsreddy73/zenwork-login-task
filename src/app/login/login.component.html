@@ -1,0 +1,48 @@
+<div class="card">
+  <div style="text-align: center">
+    <h4 class="card-header">Login page</h4>
+    <div class="card-body">
+      <form [formGroup]="form" (ngSubmit)="onSubmit()">
+        <div style="display: inline-grid; margin: 10px">
+          <div class="form-group">
+            <div class="float-left" style="margin: 6px 10px 0 0">
+              <label>Username</label>
+            </div>
+            <div class="float-right">
+              <input type="text" formControlName="username" class="form-control" [ngClass]="{ 'is-invalid': submitted && f.username.errors }" />
+              <div *ngIf="submitted && f.username.errors">
+                <div *ngIf="f.username.errors.required" style="color: red">Username is required</div>
+              </div>
+            </div>
+          </div>
+
+          <div class="form-group">
+            <div class="float-left" style="margin-top: 6px">
+              <label>Password</label>
+            </div>
+            <div class="float-right">
+              <input type="password" formControlName="password" class="form-control"
+                     [ngClass]="{ 'is-invalid': submitted && f.password.errors && f.password.errors.required}" />
+              <div *ngIf="submitted && f.password.errors">
+                <div *ngIf="f.password.errors.required" style="color: red">Password is required</div>
+              </div>
+            </div>
+          </div>
+
+          <div class="form-group">
+            <button class="btn btn-primary">
+              <!--<span *ngIf="loading" class="spinner-border spinner-border-sm mr-1"></span>-->
+              Login
+            </button>
+          </div>
+
+          <div *ngIf="submitted && f.password.errors">
+            <div *ngIf="!f.password.errors.required" style="color: red">Invalid credentials</div>
+          </div>
+
+        </div>
+      </form>
+    </div>
+  </div>
+</div>
+

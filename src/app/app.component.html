@@ -1,0 +1,18 @@
+<div class="container">
+  <nav class="navbar navbar-expand navbar-dark bg-dark">
+    <div style="width: 100%; display: inline-table;">
+      <div class="float-left">
+        <img src="assets/images/dream.jpg" style="height: 100px">
+      </div>
+      <div class="navbar-nav float-right" style="margin-top: 25px" *ngIf="validLogin">
+        <a class="nav-item nav-link" routerLink="/home">Home</a>
+        <a class="nav-item nav-link" routerLink="/login">Logout</a>
+      </div>
+    </div>
+  </nav>
+<router-outlet></router-outlet>
+
+<div style="text-align: center; position: fixed; bottom: 0; width: 80%; margin-bottom: 10px;"> @Copy rights by me
+</div>
+
+</div>
